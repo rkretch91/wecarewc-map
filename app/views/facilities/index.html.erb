@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>loadMapAsyncHTML</title>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+    </head>
+    <body>
+        <div id='printoutPanel'></div>
+
+        <div id='myMap' style='width: 100vw; height: 100vh;'></div>
+        <script type='text/javascript'>
+                var map;
+                function loadMapScenario() {
+                    map = new Microsoft.Maps.Map(document.getElementById('myMap'),{ center: new Microsoft.Maps.Location(31.2304, 121.4737),
+                       zoom: 14});
+                }
+
+
+        </script>
+        <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap&setMkt=zh-CN&setLang=zh' async defer></script>
+
+        <script type='text/javascript' src='https://cn.bing.com/api/maps/mapcontrol?key=NPMyDgVWqvLs2AOFLueU~oLiYaBtvX9SLaK1IbuzLVQ~Am-d4hWIePX5Yp1abJufTuic-cehGeSkdHAsb7nYhmuQQpQS18zf6g789mxLaW7t&callback=loadMapScenario' async defer>
+        </script>
+    </body>
+</html>
+
+

@@ -1,6 +1,13 @@
 class FacilitiesController < ApplicationController
   def index
-    @facilities = Facility.all
+    @facilities = Facility.where.not(latitude: nil, longitude: nil)
+
+    @markers = @facilities.map do |facility|
+      {
+        lat: facility.latitude,
+        lng: facility.longitude
+      }
+    end
   end
 
   def show
