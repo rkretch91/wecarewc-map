@@ -4,7 +4,7 @@
       <%= simple_form_for @facility do |f| %>
         <%= f.input :name %>
         <%= f.input :address %>
-        <%= f.input :types, as: :check_boxes, collection: ["Restroom", "Nursing Room", "Family Room", "Makeup Room", "Accessible Room"]%>
+        <%= f.input :types, as: :radio_buttons, collection: ["Restroom", "Nursing Room", "Family Room", "Makeup Room", "Accessible Room"], value_method: :to_sym %>
         <%= f.button :submit %>
       <% end %>
   </div>
