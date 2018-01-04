@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-xs-4 col-xs-offset-4">
+    <h1>Add a new facility!</h1>
+      <%= simple_form_for @facility do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :types, as: :radio_buttons, collection: ["Restroom", "Nursing Room", "Family Room", "Makeup Room", "Accessible Room"], value_method: :to_sym %>
+        <%= f.button :submit %>
+      <% end %>
+  </div>
+</div>
