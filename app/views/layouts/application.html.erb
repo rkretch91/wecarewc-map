@@ -3,14 +3,17 @@
   <head>
     <title>WecareWC Map</title>
     <%= csrf_meta_tags %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Merienda+One|Nunito:300,700" rel="stylesheet">
+    <style type="text/css">
+    body, html,.allmap {width: 100%, height: 90%;overflow: hidden;margin:auto;font-family:"微软雅黑";}
+    </style>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag "http://api.map.baidu.com/api?v=2.0&ak=3UKSHeiMEMa3dnGG2e3EMTC5WYXRa1TM"%>
-
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=3UKSHeiMEMa3dnGG2e3EMTC5WYXRa1TM"></script>
   </head>
 
   <body>
