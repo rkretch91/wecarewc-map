@@ -7,16 +7,16 @@
       <p><%= link_to "Add a public facility", new_facility_path %></p>
     </div>
 <script type="text/javascript">
-  var mp = new BMap.Map("allmap");
+  var map = new BMap.Map("allmap");
   var point = new BMap.Point(121.479102, 31.235929);
-  mp.centerAndZoom(point, 13);
-  mp.enableScrollWheelZoom();
-  mp.enableInertialDragging();
+  map.centerAndZoom(point, 13);
+  map.enableScrollWheelZoom( );
+  map.enableInertialDragging();
 
-  mp.enableContinuousZoom();
+  map.enableContinuousZoom();
 
   var size = new BMap.Size(10, 20);
-  mp.addControl(new BMap.CityListControl({
+  map.addControl(new BMap.CityListControl({
       anchor: BMAP_ANCHOR_TOP_LEFT,
       offset: size,
       // 切换城市之间事件

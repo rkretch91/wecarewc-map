@@ -1,7 +1,8 @@
 class FacilitiesController < ApplicationController
+  responders :flash, :http_cache
+
   def index
     @facilities = Facility.where.not(latitude: nil, longitude: nil)
-
     @markers = @facilities.map do |facility|
       {
         lat: facility.latitude,
@@ -20,11 +21,16 @@ class FacilitiesController < ApplicationController
 
   def create
     @facility = Facility.new(facilities_params)
-    if @facility.save
-      redirect_to @facility, notice: "Added Successfully!"
-    else
-      render :new
-    end
+    flash[:notice] = "Facility was successfully created." if @facility.save
+    respond_with(@facility)
+    # respond_to do |format|
+    #   if @facility.save
+    #     format.js { render 'create' }
+    #     redirect_to @facility, notice: "Added Successfully!"
+    #   else
+    #     format.html { render :new }
+    #   end
+    # end
   end
 
   def edit
